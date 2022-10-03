@@ -1,0 +1,6 @@
+config wake_host 'Host'
+    option listen_interface '<ToDo>'
+	option listen_ip '<ToDo>'
+	option listen_dns '<ToDo>'
+	option host_ip '<ToDo>'
+	option host_mac '<ToDo>'
