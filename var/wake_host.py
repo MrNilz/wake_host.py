@@ -5,7 +5,6 @@ import sys
 from scapy.all import sniff,conf,DNS,IP,IPv6,UDP
 from wakeonlan import send_magic_packet
 
-
 if len(sys.argv) != 6:
     raise ValueError('Please provide listen_interface, listen_ip, listen_dns, host_ip and host_mac to send magic packages.')
 
@@ -30,5 +29,3 @@ if __name__ == '__main__':
     conf.layers.filter([IP, IPv6, UDP, DNS])
 
     sniff(iface=f"{listen_interface}",filter=f"ip dst {listen_ip} and udp and port 53", lfilter=lambda x: x.haslayer(DNS), prn=handler, store=0)
-
-    syslog.syslog(f'Stopped watching for DNS Query {listen_dns}.')
