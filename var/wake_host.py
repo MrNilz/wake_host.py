@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     syslog.syslog(f'Start watching for DNS Query {listen_dns} on Interface {listen_interface} IP {listen_ip} and wake up IP {host_ip} MAC {host_mac} if DNS Query occurs.')
     
-    conf.promisc = False
+    conf.sniff_promisc = False
     conf.layers.filter([IP, IPv6, UDP, DNS])
 
     sniff(iface=f"{listen_interface}",filter=f"ip dst {listen_ip} and udp and port 53", lfilter=lambda x: x.haslayer(DNS), prn=handler, store=0)
