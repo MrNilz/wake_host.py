@@ -1,6 +1,6 @@
 config wake_host 'Host'
     option listen_interface '<ToDo>'
 	option listen_ip '<ToDo>'
-	option listen_dns '<ToDo>'
+	option listen_dns '<ToDo !Depending on your DNS Backend you might have to add a dot (.) behind the DNS for the string compare to match!>'
 	option host_ip '<ToDo>'
 	option host_mac '<ToDo>'
