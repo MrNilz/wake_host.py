@@ -28,3 +28,9 @@ To immediately start the service use
  `/etc/init.d/wake_host start`
 
 You can look in your syslog for a corresponding message. Pls note depending on your HW resources python can take quite some time for startup.
+
+# Hints
+
+To enhance startup time you can precompile python to pyc files using.
+
+`python -m compileall /var/wake_host.py`
