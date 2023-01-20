@@ -23,6 +23,7 @@ start_service() {
     config_get host_mac Host host_mac
 
     procd_open_instance
+    procd_set_param nice 19
     procd_set_param command /usr/bin/python "/var/wake_host.py" "$listen_interface" "$listen_ip" "$listen_dns" "$host_ip" "$host_mac"
     procd_set_param file /etc/config/wake_host
     procd_set_param stdout 1
